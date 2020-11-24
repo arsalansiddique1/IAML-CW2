@@ -52,7 +52,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % --------------------------------------------------------
 % IMPORTANT: Specify your Student ID below. You will need to uncomment the line, else compilation will fail. Make sure to specify your student ID correctly, otherwise we may not be able to identify your work and you will be marked as missing.
-%\newcommand{\assignmentAuthorName}{s1234567}
+\newcommand{\assignmentAuthorName}{s1720422}
 %--------------------------------------------------------
 
 
@@ -89,7 +89,11 @@
     
 
       \begin{answerbox}{10em}
-         Your Answer Here
+         For the first and last training samples, the values of the first 4 elements are the exact same and as follows:\newline
+         Element 1: $-3.137\times10^{-6}$\newline
+         Element 2: $-2.268\times10^{-6}$\newline
+         Element 3: $-1.180\times10^{-6}$\newline
+         Element 4: $-4.071\times10^{-6}$\newline
       \end{answerbox}
   
 
@@ -110,7 +114,8 @@
 
 
   \begin{answerbox}{52em}
-    Your Answer Here
+    \includegraphics[width = 1.0\textwidth]{q1_2.png}
+    By visualising the data, we can see that the samples with a smaller Euclidean Distance away from the mean vector tend to resemble the class of the mean vector a lot more than samples which are further away from the mean vector. One prime example being in class 1. The actual class is for trousers, however the samples furthest away from the mean vector resemble shorts.
   \end{answerbox}
 
 
@@ -131,7 +136,16 @@
 
 
     \begin{answerbox}{15em}
-      Your Answer Here
+    \begin{center}
+    \caption{Variance of first 5 principal components}\newline
+    \begin{tabular}{c|c|c|c|c}
+    \hline
+    Component 1 & Component 2 & Component 3 & Component 4 & Component 5 \\ \hline
+    19.81 & 12.11 & 4.106 & 3.382 & 2.625 \\
+    \hline
+    \end{tabular}
+    \end{center}
+      
     \end{answerbox}
     
 
@@ -149,7 +163,9 @@
    
 
       \begin{answerbox}{30em}
-         Your Answer Here
+        \includegraphics[width = 1.0\textwidth]{q1_4.png}
+        It can be seen that as the number of components being used is increased up until k = 150, the amount of variance accounted for within the data rapidly increases.Beyond that point, the total variance doesn't increase much as k is increased.
+    
       \end{answerbox}
   
 
@@ -167,7 +183,9 @@
    
 
       \begin{answerbox}{35em}
-         Your Answer Here
+         \includegraphics[width = 1.0\textwidth]{q1_5.png}
+         From the above results it can be deduced that PCA has managed to capture the representation of most classes fairly well. For example, class 0 is meant to be a top which has its outline captured in black by the first component. Similarly, component 2 captures the trouser class (1) fairly well as indicated by the white outline of the component image. However the representation of classes become diluted for components which represent a lower variance. This can be seen with component 6 which should represent a sandal but shows no pattern corresponding to that item.
+         
       \end{answerbox}
   
 
@@ -189,7 +207,24 @@
      
 
       \begin{answerbox}{25em}
-         Your Answer Here
+         \begin{center}
+        \caption{RMSE values for table of Class$\times$\# of components(k)}\newline
+        \begin{tabular}{c|c|c|c|c}
+        \hline
+        Class & k = 5 & k = 20 & k = 50 & k = 200 \\ \hline
+        0 & 0.2561 & 0.1502 & 0.1275 & 0.0613 \\
+        1 & 0.1980 & 0.1404 & 0.0955 & 0.0347 \\
+        2 & 0.1987 & 0.1454 & 0.1237 & 0.0821 \\
+        3 & 0.1457 & 0.1073 & 0.0831 & 0.0567 \\
+        4 & 0.1182 & 0.1027 & 0.0878 & 0.0468 \\
+        5 & 0.1811 & 0.1590 & 0.1423 & 0.0899 \\
+        6 & 0.1295 & 0.0957 & 0.0722 & 0.0459 \\
+        7 & 0.1656 & 0.1280 & 0.1069 & 0.0637 \\
+        8 & 0.2234 & 0.1451 & 0.1235 & 0.0923 \\
+        9 & 0.1835 & 0.1518 & 0.1221 & 0.0711 \\
+        \hline
+        \end{tabular}
+        \end{center}
       \end{answerbox}
   
 
@@ -208,7 +243,8 @@
    
 
       \begin{answerbox}{52em}
-         Your Answer Here
+         \includegraphics[width = 0.63\textwidth]{q1_7.png}
+         From the plot above, it can be seen that as the number of principal components increase, the clarity of the reconstructed sample improves and looks more like a specific piece of clothing. The reason for this is due to a larger variance of the complete data being accounted for when higher values of k are used.
       \end{answerbox}
   
 
@@ -229,7 +265,8 @@
    
 
       \begin{answerbox}{40em}
-         Your Answer Here
+         \includegraphics[width = 1.0\textwidth]{q1_8.png}
+         From the plot above we can deduce that class 9 an class 6 are well defined by their own clusters, densely distributed and are mostly separable. Whereas points belonging to class 4,2 and 8 tend to be very spread out and hard to separate from other classes. The remaining classes tend to be mostly separable on the outer edges of the overall cluster.
       \end{answerbox}
   
 
@@ -271,9 +308,32 @@
 
    
 
-      \begin{answerbox}{30em}
-         Your Answer Here
-      \end{answerbox}
+    \begin{answerbox}{30em}
+    Testing Accuracy: 84.01\%\newline
+    \centreline{Table showing confusion matrix for Actual Classes Vs. Predicted Classes.}\newline
+    \centerline{Predicted Classes}
+    \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+    \hline
+    \multicolumn{1}{c}{\bfseries 0} & \multicolumn{1}{c}{\bfseries 1} & \multicolumn{1}{c}{\bfseries 2} & \multicolumn{1}{c}{\bfseries 3} &
+    \multicolumn{1}{c}{\bfseries 4} & \multicolumn{1}{c}{\bfseries 5} &
+    \multicolumn{1}{c}{\bfseries 6} & \multicolumn{1}{c}{\bfseries 7} &
+    \multicolumn{1}{c}{\bfseries 8} & \multicolumn{1}{c}{\bfseries 9} \\ \hline
+    819 & 3   & 15  & 50  & 7   & 4   & 90  & 1   & 11  & 0   \\ 
+    5      & 953 & 4   & 27  & 5   & 0   & 3   & 1   & 2   & 0   \\ 
+    27     & 4   & 731 & 11  & 133 & 0   & 82  & 2   & 9   & 11  \\ 
+    31     & 15  & 14  & 866 & 33  & 0   & 37  & 0   & 4   & 0   \\ 
+    0      & 3   & 115 & 38  & 760 & 2   & 72  & 0   & 10  & 0   \\ 
+    2      & 0   & 0   & 1   & 0   & 911 & 0   & 56  & 10  & 20  \\ 
+    147    & 3   & 128 & 46  & 108 & 0   & 539 & 0   & 28  & 1   \\ 
+    0      & 0   & 0   & 0   & 0   & 32  & 0   & 936 & 1   & 31  \\ 
+    7      & 1   & 6   & 11  & 3   & 7   & 15  & 5   & 945 & 0   \\ 
+    0      & 0   & 0   & 1   & 0   & 15  & 1   & 42  & 0   & 941 \\ 
+    \hline
+    \end{tabular}
+    \end{center}          
+    
+    \end{answerbox}
   
 
 
@@ -294,7 +354,30 @@
    
 
       \begin{answerbox}{30em}
-         Your Answer Here
+         Testing Accuracy: 84.61\%\newline
+             \centreline{Table showing confusion matrix for Actual Classes Vs. Predicted Classes.}\newline
+        \centerline{Predicted Classes}
+        \begin{center}
+        \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+        \hline
+        \multicolumn{1}{c}{\bfseries 0} & \multicolumn{1}{c}{\bfseries 1} & \multicolumn{1}{c}{\bfseries 2} & \multicolumn{1}{c}{\bfseries 3} &
+        \multicolumn{1}{c}{\bfseries 4} & \multicolumn{1}{c}{\bfseries 5} &
+        \multicolumn{1}{c}{\bfseries 6} & \multicolumn{1}{c}{\bfseries 7} &
+        \multicolumn{1}{c}{\bfseries 8} & \multicolumn{1}{c}{\bfseries 9} \\ \hline
+        845    & 2   & 8  & 51  & 4   & 4   & 72  & 0   & 14  & 0   \\ 
+        4      & 951 & 7   & 31  & 5   & 0   & 1   & 0   & 1   & 0   \\ 
+        15     & 2   & 748 & 11  & 137 & 0   & 79  & 0   & 8   & 0  \\ 
+        32     & 6  & 12  & 881 & 26  & 0   & 40  & 0   & 3   & 0   \\ 
+        1      & 0   & 98 & 36  & 775 & 0   & 86  & 0   & 4  & 0   \\ 
+        0      & 0   & 0   & 1   & 0   & 914 & 0   & 57  & 2  & 26  \\ 
+        185    & 1   & 122 & 39  & 95 & 0   & 533 & 0   & 25  & 0   \\ 
+        0      & 0   & 0   & 0   & 0   & 34  & 0   & 925 & 0   & 41  \\ 
+        3      & 1   & 8   & 5  & 2   & 4   & 13  & 4   & 959 & 1   \\ 
+        0      & 0   & 0   & 0   & 0   & 22  & 0   & 47  & 1   & 930 \\ 
+        \hline
+        \end{tabular}
+        \end{center}      
+         
       \end{answerbox}
   
 
@@ -314,7 +397,8 @@
    
 
       \begin{answerbox}{35em}
-         Your Answer Here
+         \includegraphics[width = 1.0\textwidth]{q2_3.png}
+         From the plot above we can see that there are 10 distinct regions for each class which are all separated by a linear boundary.
       \end{answerbox}
   
 
@@ -334,7 +418,8 @@
    
 
       \begin{answerbox}{35em}
-         Your Answer Here
+         \includegraphics[width = 1.0\textwidth]{q2_4.png}
+         From the plot above we can see that the decision regions for the SVM classifier are non-linear. This is due to the RBF kernel being employed which maps points to areas based on how far they are from the centre of the radial basis function. Hence this results in non-linear decision boundaries. Furthermore, nearly all of the decision regions are centrally located and confined within a smaller space compared to the Logistic regression classifier which has it's decision boundaries distributed across the entire plot.
       \end{answerbox}
   
 
@@ -359,7 +444,9 @@
    
 
       \begin{answerbox}{30em}
-         Your Answer Here
+         \includegraphics[width = 1.0\textwidth]{q2_5.png}
+         From the graph above we can see that when c = 100, we obtain the highest mean accuracy score of approximately 84.0\%. 
+         
       \end{answerbox}
   
 
@@ -379,7 +466,9 @@
        
 
       \begin{answerbox}{10em}
-         Your Answer Here
+         Given C = 100,\newline
+         Training set accuracy: 93.82\%\newline
+         Testing set accuracy: 88.04\%
       \end{answerbox}
   
 
@@ -422,7 +511,38 @@
    
 
       \begin{answerbox}{35em}
-         Your Answer Here
+         Inertia = 38185.82
+            \begin{center}
+    \caption{   Table showing amount of samples assigned to each cluster}\newline
+    \begin{tabular}{c|c}
+    \hline
+    Cluster \# & \# of Samples \\ \hline
+    0 & 1018 \\
+    1 & 1125  \\
+    2 & 1191 \\
+    3 & 890 \\
+    4 & 1162 \\
+    5 & 1332 \\
+    6 & 839  \\
+    7 & 623 \\
+    8 & 1400 \\
+    9 & 838 \\
+    10 & 659 \\
+    11 & 1276 \\
+    12 & 121 \\
+    13 & 152 \\
+    14 & 950 \\
+    15 & 1971 \\
+    16 & 1251 \\
+    17 & 845 \\
+    18 & 896 \\
+    19 & 930 \\
+    20 & 1065 \\
+    21 & 1466 \\
+    
+    \hline
+    \end{tabular}
+    \end{center}
       \end{answerbox}
   
 
@@ -445,7 +565,8 @@
    
 
       \begin{answerbox}{35em}
-         Your Answer Here
+         \includegraphics[width = 1.0\textwidth]{q3_2.png}
+         From the plot above it can be seen that the mean vectors for languages tend to be grouped closer together, whereas the cluster centres for each language tend to be more spread out. Generally, the mean vectors and cluster centres are distributed in similar areas apart from a few outliers located at the top left and far right of the plot.
       \end{answerbox}
   
 
@@ -465,7 +586,9 @@
      
 
       \begin{answerbox}{35em}
-         Your Answer Here
+         \includegraphics[width=15cm, height=11cm]{q3_3.png}
+         From the dendrogram above it can be seen that languages 16, 12, 11 and 3 are very distinct compared to the rest of the languages. This is because the distance required to merge them with the red cluster is very large.An appropriate cut-off distance would be at around d = 0.85 where we would have 5 clusters. Beyond that, a large distance is needed for the next merge to occur.
+         
       \end{answerbox}
   
 
@@ -485,7 +608,12 @@
    
 
       \begin{answerbox}{50em}
-         Your Answer Here
+         \includegraphics[width = 1.0\textwidth]{q3_4_ward.png}
+         \includegraphics[width = 1.0\textwidth]{q3_4_single.png}
+         \includegraphics[width = 1.0\textwidth]{q3_4_complete.png}
+         In the Ward method, most of the cluster merges happen early on. In contrast, it can be seen that the distance required for most merges to occur in the single-link method is progressive ad incremental until the distance goes beyond 1.5. Finally, in the complete-linked method most clusters are merged quite late on average.
+         
+         
       \end{answerbox}
   
 
@@ -506,7 +634,21 @@
 
 
       \begin{answerbox}{30em}
-         Your Answer Here
+         \includegraphics[width = 0.5\textwidth]{q3_5.png}
+         \begin{center}
+        \caption{Table showing per-sample average log-likelihoods for language 0}\newline
+        \scalebox{0.85}{
+        \begin{tabular}{c|c|c|c|c|c|c}
+        \hline
+        Data Set & covar\_type & k = 1 & k = 3 & k = 5 & k = 10 & k =15 \\ \hline
+        Training & diag & 14.280 & 15.398 & 16.010 & 16.917 & 17.505 \\
+        Test & diag & 13.843 & 15.041 & 15.909 & 16.568 & 16.902 \\
+        Training & full & 16.394 & 18.086 & 19.036 & 21.062 & 22.786 \\
+        Test & full & 15.811 & 17.066 & 16.489 & 14.622 & 11.848 \\
+        \hline
+        \end{tabular}}
+        \end{center}
+        From the graph and table above, it can be seen that when fitting a GMM with a full covariance matrix, high log-likelihoods are produced across all ranges of k on the training set. However, the model performs poorly on the unseen test data as shown by the red line. This means the GMM has been over-fit to the training data. In comparison, for a GMM trained using a diagonal covariance matrix, consistent log-likelihood performance results are obtained acroos both training and test sets, so the GMM model is a lot more suitable with this metric.
       \end{answerbox}
   
 
