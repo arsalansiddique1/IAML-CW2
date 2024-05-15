@@ -3,6 +3,8 @@ This is the repository for Assignment 2 for IAML 2020.
 
 **N.B.: This is the assignment for the Level 10 version of the course. If you are on the Level 11 course (i.e. likely an MSc student), then you should use [this](https://github.com/uoe-iaml/INFR11182-2020-CW2) version instead.**
 
+Marks achieved: 79/100
+
 ## Repository Contents
 
  * `IAML_2020_CW2_INFR10069_Instructions.pdf`: This is the pdf with the question-sheet for the assignment.
